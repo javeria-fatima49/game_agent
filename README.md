@@ -49,8 +49,9 @@ GEMINI_API_KEY=your_google_gemini_api_key
 streamlit run main.py
 💡 Tip: Make sure your Gemini quota is not exceeded (Daily limit)
 ```
-### 📂 Project Structure
 
+### 📂 Project Structure
+```bash
 📁 game-agent-rpg/
 ├── 🧙 main.py → Streamlit UI & main logic
 ├── 📜 narrator_agent.py → Narrates fantasy scenes
@@ -61,6 +62,7 @@ streamlit run main.py
 │ └── ✨ generate_event.py → Random item/event generator
 ├── 📄 .env → Gemini API Key (DO NOT COMMIT)
 └── 📘 README.md → Project overview & usage
+```
 
 ## 💡 How It Works
 
