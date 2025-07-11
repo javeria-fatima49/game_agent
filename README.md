@@ -1,4 +1,3 @@
-"# game_agent" 
 # 🧙 Game Master Agent – Fantasy Adventure Game
 
 Welcome to your own **text-based fantasy world** powered by **AI agents and Gemini**. Embark on epic adventures, face terrifying monsters, find magical treasures, and let your story unfold – all from a simple input.
