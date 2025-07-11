@@ -36,71 +36,58 @@ Welcome to your own **text-based fantasy world** powered by **AI agents and Gemi
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/game-master-agent.git
-cd game-master-agent
-
-# Create a virtual environment
-python -m venv venv
-venv\Scripts\activate   # On Windows
-# or
-source venv/bin/activate   # On macOS/Linux
+git clone https://github.com/YOUR_USERNAME/game-agent.git
+cd game-agent
 
 # Install dependencies
 pip install -r requirements.txt
 🔐 Environment Setup
 Create a .env file and add your Gemini API key:
 
-env
-Copy
-Edit
 GEMINI_API_KEY=your_google_gemini_api_key
 🧠 Run the App
-bash
-Copy
-Edit
 streamlit run main.py
 💡 Tip: Make sure your Gemini quota is not exceeded (Daily limit)
+```
+### 📂 Project Structure
 
-🗂️ Project Structure
-bash
-Copy
-Edit
-game-master-agent/
-│
-├── main.py                      # Streamlit UI + Game Flow
-├── narrator_agent.py            # Handles narrative logic
-├── monster_agent.py             # Handles battle logic
-├── item_agent.py                # Handles rewards logic
-│
-├── tools/
-│   ├── roll_dice.py             # Dice roll tool
-│   └── generate_event.py        # Random reward generator
-│
-├── .env                         # Your API key (should be in .gitignore)
-├── requirements.txt             # Dependencies
-└── README.md                    # You're reading it! ❤️
-🧪 Example Prompts to Try
-Type	Sample Input
-🗺️ Exploration	Enter the dark cave
-⚔️ Combat	Fight the skeleton with my sword
-💎 Reward	Open the golden chest
-🧙 Misc	Drink potion from the fountain
-🙏 Polite	Thank you → "You're welcome, brave adventurer!"
+📁 game-agent-rpg/
+├── 🧙 main.py → Streamlit UI & main logic
+├── 📜 narrator_agent.py → Narrates fantasy scenes
+├── 🧟 monster_agent.py → Handles battles via Gemini
+├── 🎁 item_agent.py → Rewards & discoveries logic
+├── 🧰 tools/
+│ ├── 🎲 roll_dice.py → Simulates dice for combat
+│ └── ✨ generate_event.py → Random item/event generator
+├── 📄 .env → Gemini API Key (DO NOT COMMIT)
+└── 📘 README.md → Project overview & usage
 
-📸 UI Preview
-(Add screenshot here of your Streamlit app)
-Use st.image("screenshot.png") in your app if needed.
+## 💡 How It Works
 
-📈 Future Plans (Optional)
-Save game state across sessions
+1. The user inputs a fantasy action (e.g., *"Enter the cave"* or *"Fight the goblin"*).
+2. `NarratorAgent` uses the Gemini model to narrate what happens next.
+3. If the action includes combat (e.g., *fight*, *battle*), `MonsterAgent` rolls a dice and generates an AI-powered battle result.
+4. If the action is exploratory (e.g., *open*, *search*, *drink*), `ItemAgent` generates a reward or magical item using Gemini.
+5. All messages are displayed chronologically using `Streamlit` with memory of session actions.
 
-Add character customization
+---
 
-Integrate voice input using Whisper API
+## 🧪 Sample Player Inputs
 
-Deploy on mobile with Streamlit Community Cloud
+You can try these sample actions to test the game:
 
-🙌 Credits
+- `Enter cave`
+- `Fight goblin`
+- `Search treasure chest`
+- `Drink from the fountain`
+- `Use magic scroll`
+- `Attack the orc`
+- `Open mysterious box`
+
+---
+
+## 🙌 Credits
+
 Developed by Javeria Fatima 🌸
 Mentors: Sir Bilal, Sir Ali Aftab, Sir Zia Khan
 Part of the GIAIC Agentic AI Assignment Series
